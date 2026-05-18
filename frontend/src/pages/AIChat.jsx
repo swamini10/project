@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import Sidebar from "../components/Sidebar";
 import "./AIChat.css";
 
 function AIChat() {
@@ -21,7 +22,7 @@ function AIChat() {
 
         try {
             const res = await axios.post(
-                "http://localhost:8080/api/auth/chat",
+                "http://localhost:8080/api/chat",
                 { message: userMsg }
             );
 
@@ -32,9 +33,9 @@ function AIChat() {
                         : msg
                 )
             );
-        } catch (err) {
-            console.error(err);
-        }
+        }catch (err) {
+    console.error(err.response?.data || err.message);
+}
     };
 
     // auto scroll
