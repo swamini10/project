@@ -29,7 +29,7 @@ function AIChat() {
             setMessages((prev) =>
                 prev.map((msg, i) =>
                     i === prev.length - 1
-                        ? { ...msg, bot: res.data }
+                        ? { ...msg, bot: res.data.response }
                         : msg
                 )
             );
