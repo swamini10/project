@@ -26,67 +26,67 @@ const Home = () => {
 
           {/* HERO SECTION */}
           {/* HERO SECTION */}
-<section className="relative px-10 py-16 overflow-hidden">
+          <section className="relative px-10 py-16 overflow-hidden">
 
-  {/* Background Glow */}
-  <div className="absolute top-0 left-0 w-72 h-72 bg-pink-500/20 blur-3xl rounded-full"></div>
+            {/* Background Glow */}
+            <div className="absolute top-0 left-0 w-72 h-72 bg-pink-500/20 blur-3xl rounded-full"></div>
 
-  <div className="absolute bottom-0 right-0 w-72 h-72 bg-indigo-500/20 blur-3xl rounded-full"></div>
+            <div className="absolute bottom-0 right-0 w-72 h-72 bg-indigo-500/20 blur-3xl rounded-full"></div>
 
-  <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
+            <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
 
-    {/* LEFT SIDE */}
-    <div>
+              {/* LEFT SIDE */}
+              <div>
 
-      {/* Badge */}
-      <div className="inline-block px-5 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-lg mb-6">
-        <span className="text-pink-400 font-semibold">
-          🚀 AI Powered Learning
-        </span>
-      </div>
+                {/* Badge */}
+                <div className="inline-block px-5 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-lg mb-6">
+                  <span className="text-pink-400 font-semibold">
+                    🚀 AI Powered Learning
+                  </span>
+                </div>
 
-      {/* Heading */}
-      <h1 className="text-6xl font-extrabold text-white leading-tight mb-6">
-        Welcome to <br />
+                {/* Heading */}
+                <h1 className="text-6xl font-extrabold text-white leading-tight mb-6">
+                  Welcome to <br />
 
-        <span className="bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-          AI Study Assistant
-        </span>
-      </h1>
+                  <span className="bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                    AI Study Assistant
+                  </span>
+                </h1>
 
-      {/* Description */}
-      <p className="text-white/60 text-lg max-w-2xl leading-relaxed mb-10">
-        Upload PDFs, generate smart summaries, create flashcards,
-        quizzes, and chat with your study notes using AI.
-      </p>
+                {/* Description */}
+                <p className="text-white/60 text-lg max-w-2xl leading-relaxed mb-10">
+                  Upload PDFs, generate smart summaries, create flashcards,
+                  quizzes, and chat with your study notes using AI.
+                </p>
 
-      {/* Button */}
-      <button
-        onClick={() => navigate("/summarizer")}
-        className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-8 py-4 rounded-2xl text-white font-bold shadow-2xl hover:scale-105 transition duration-300"
-      >
-        ✨ Lets Start
-      </button>
+                {/* Button */}
+                <button
+                  onClick={() => navigate("/summarizer")}
+                  className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-8 py-4 rounded-2xl text-white font-bold shadow-2xl hover:scale-105 transition duration-300"
+                >
+                  ✨ Lets Start
+                </button>
 
-    </div>
+              </div>
 
-   {/* RIGHT SIDE IMAGE */}
-<div className="relative flex justify-center items-center">
+              {/* RIGHT SIDE IMAGE */}
+              <div className="relative flex justify-center items-center">
 
-  {/* Glow */}
-  <div className="absolute w-[550px] h-[550px] bg-purple-500/20 blur-[140px] rounded-full"></div>
+                {/* Glow */}
+                <div className="absolute w-[550px] h-[550px] bg-purple-500/20 blur-[140px] rounded-full"></div>
 
-  {/* Robot GIF */}
-  <img
-    src="/1.gif"
-    alt="AI Robot"
-    className="relative z-10 w-[950px] object-contain mix-blend-screen"
-  />
+                {/* Robot GIF */}
+                <img
+                  src="/1.gif"
+                  alt="AI Robot"
+                  className="relative z-10 w-[950px] object-contain mix-blend-screen"
+                />
 
-</div>
-  </div>
+              </div>
+            </div>
 
-</section>
+          </section>
 
           {/* FEATURES SECTION */}
           <section className="px-10 py-10">
@@ -107,56 +107,63 @@ const Home = () => {
                 {
                   title: "PDF Summary",
                   icon: "📄",
-                  desc: "Instantly summarize long PDFs into short notes."
+                  desc: "Instantly summarize long PDFs into short notes.",
+                  path: "/pdfsummarizer"
                 },
                 {
                   title: "AI Quiz",
                   icon: "🧠",
-                  desc: "Generate quizzes automatically from notes."
+                  desc: "Generate quizzes automatically from notes.",
+                  path: "/quiz"
                 },
                 {
                   title: "Chat With PDF",
                   icon: "💬",
-                  desc: "Ask questions directly from your PDFs."
+                  desc: "Ask questions directly from your PDFs.",
+                  path: "/chatpdf"
                 },
                 {
                   title: "Voice Summary",
                   icon: "🎤",
-                  desc: "Listen to summaries with AI voice."
+                  desc: "Listen to summaries with AI voice.",
+                  path: "/voicesummary"
                 },
                 {
                   title: "Mind Maps",
                   icon: "🗺️",
-                  desc: "Visualize concepts using AI-generated mindmaps."
+                  desc: "Visualize concepts using AI-generated mindmaps.",
+                  path: "/mindmaps"
                 },
                 {
                   title: "Flashcards",
                   icon: "📚",
-                  desc: "Generate study flashcards instantly."
-                }
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="group bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl hover:border-pink-500/40 hover:-translate-y-2 transition duration-500 shadow-xl"
-                >
+                  desc: "Generate study flashcards instantly.",
+                  path: "/flashcards"
+                }].map((item, index) => (
+                  <div
+                    key={index}
+                    onClick={() => navigate(item.path)}   // ✅ ADD THIS
+                    className="cursor-pointer group bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl hover:border-pink-500/40 hover:-translate-y-2 transition duration-500 shadow-xl"
+                  >
 
-                  {/* Icon */}
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-pink-500/20 to-indigo-500/20 flex items-center justify-center text-5xl mb-6 group-hover:scale-110 transition duration-300">
-                    {item.icon}
+
+                    {/* Icon */}
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-pink-500/20 to-indigo-500/20 flex items-center justify-center text-5xl mb-6 group-hover:scale-110 transition duration-300">
+                      {item.icon}
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      {item.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-white/50 leading-relaxed">
+                      {item.desc}
+                    </p>
+
                   </div>
-
-                  {/* Title */}
-                  <h3 className="text-2xl font-bold text-white mb-4">
-                    {item.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-white/50 leading-relaxed">
-                    {item.desc}
-                  </p>
-
-                </div>
-              ))}
+                ))}
 
             </div>
 
