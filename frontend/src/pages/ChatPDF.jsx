@@ -1,4 +1,4 @@
-
+import { useNavigate } from "react-router-dom";
 import React, { useState, useRef, useEffect } from "react";
 import {
   FaFilePdf,
@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 
 const ChatPDF = () => {
+  const navigate = useNavigate();
   const [pdfFile, setPdfFile] = useState(null);
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState([]);
@@ -149,6 +150,7 @@ const ChatPDF = () => {
                     Ready to chat
                   </p>
                 </div>
+                
 
               </div>
             ) : (

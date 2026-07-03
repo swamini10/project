@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Quiz = () => {
+  const navigate = useNavigate();
   const [topic, setTopic] = useState("");
   const [quiz, setQuiz] = useState("");
   const [loading, setLoading] = useState(false);
@@ -32,7 +34,12 @@ const Quiz = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 p-4">
-
+<button
+    onClick={() => navigate("/home")}
+    className="absolute top-6 left-6 z-30 bg-white/20 backdrop-blur-lg border border-white/30 text-white px-5 py-2 rounded-xl font-semibold hover:bg-white/30 transition duration-300 shadow-lg"
+>
+    ← Back to Home
+</button>
       {/* Glass Card */}
       <div className="w-full max-w-2xl backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl rounded-3xl p-8 text-white">
 

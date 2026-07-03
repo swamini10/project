@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Sidebar from "../components/Sidebar";
+import { useNavigate } from "react-router-dom";
+import Home from "./Home";
 import "./AIChat.css";
 
 function AIChat() {
     const [input, setInput] = useState("");
+    const navigate = useNavigate();
     const [messages, setMessages] = useState([]);
     const bottomRef = useRef();
 
@@ -56,6 +59,17 @@ function AIChat() {
                 />
         {/* <p className="text-white mt-2 text-sm">AI Assistant</p> */}
       </div>
+
+
+      {/* Back to Home Button */}
+<button
+    onClick={() => navigate("/home")}
+    className="absolute bottom-9 left-9 z-30 bg-white/20 backdrop-blur-lg border border-white/30 text-white px-5 py-2 rounded-xl font-semibold hover:bg-white/30 transition duration-300 shadow-lg"
+>
+    ← Back to Home
+</button>
+
+
             {/* 🤖 RIGHT SIDE IMAGE */}
             <div className="hidden lg:flex absolute right-10 bottom-10 z-10">
                 <img

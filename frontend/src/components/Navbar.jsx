@@ -13,6 +13,7 @@ const Navbar = () => {
   };
 
   return (
+    
     <div className="flex justify-end items-center p-4 border-b border-white/20">
 
       <div className="flex items-center gap-4">

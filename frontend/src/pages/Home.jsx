@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
+import AiChat from "./AIChat";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -8,13 +8,10 @@ const Home = () => {
   return (
     <div className="bg-[#0F172A] min-h-screen">
 
-      {/* SIDEBAR */}
-      <div className="fixed left-0 top-0 h-screen w-64 z-50">
-        <Sidebar />
-      </div>
+      
 
       {/* MAIN CONTENT */}
-      <div className="ml-64">
+      <div className="w-full">
 
         {/* NAVBAR */}
         <div className="sticky top-0 z-40 backdrop-blur-xl bg-[#0F172A]/80 border-b border-white/10">
@@ -62,7 +59,7 @@ const Home = () => {
 
                 {/* Button */}
                 <button
-                  onClick={() => navigate("/summarizer")}
+                  onClick={() => navigate("/chat")}
                   className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-8 py-4 rounded-2xl text-white font-bold shadow-2xl hover:scale-105 transition duration-300"
                 >
                   ✨ Lets Start
@@ -121,7 +118,8 @@ const Home = () => {
                   icon: "💬",
                   desc: "Ask questions directly from your PDFs.",
                   path: "/chatpdf"
-                },
+                }
+                /*
                 {
                   title: "Voice Summary",
                   icon: "🎤",
@@ -139,7 +137,9 @@ const Home = () => {
                   icon: "📚",
                   desc: "Generate study flashcards instantly.",
                   path: "/flashcards"
-                }].map((item, index) => (
+                }
+                  */
+                ].map((item, index) => (
                   <div
                     key={index}
                     onClick={() => navigate(item.path)}   // ✅ ADD THIS
