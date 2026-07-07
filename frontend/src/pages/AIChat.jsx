@@ -12,34 +12,53 @@ function AIChat() {
     const bottomRef = useRef();
 
     const sendMessage = async () => {
-        if (!input.trim()) return;
+    if (!input.trim()) return;
 
-        const userMsg = input;
+    const userMsg = input;
 
-        setMessages((prev) => [
-            ...prev,
-            { user: userMsg, bot: "Typing..." }
-        ]);
+    // Add user message immediately
+    setMessages((prev) => [
+        ...prev,
+        {
+            user: userMsg,
+            bot: "Typing..."
+        }
+    ]);
 
-        setInput("");
+    setInput("");
 
-        try {
-            const res = await axios.post(
-                "http://localhost:8080/api/chat",
-                { message: userMsg }
-            );
+    try {
+        const { data } = await axios.get(
+            "http://localhost:8080/chat",
+            {
+                params: {
+                    message: userMsg
+                }
+            }
+        );
 
-            setMessages((prev) =>
-                prev.map((msg, i) =>
-                    i === prev.length - 1
-                        ? { ...msg, bot: res.data }
-                        : msg
-                )
-            );
-        }catch (err) {
-    console.error(err.response?.data || err.message);
-}
-    };
+        setMessages((prev) => {
+            const updated = [...prev];
+            updated[updated.length - 1] = {
+                ...updated[updated.length - 1],
+                bot: data.response || data
+            };
+            return updated;
+        });
+
+    } catch (error) {
+        console.error(error);
+
+        setMessages((prev) => {
+            const updated = [...prev];
+            updated[updated.length - 1] = {
+                ...updated[updated.length - 1],
+                bot: "❌ Failed to get response."
+            };
+            return updated;
+        });
+    }
+};
 
     // auto scroll
     useEffect(() => {
