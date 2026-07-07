@@ -1,0 +1,19 @@
+info:
+  name: AI Chat
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: http://localhost:8080/chat?message=what is java in short
+  params:
+    - name: message
+      value: what is java in short
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
